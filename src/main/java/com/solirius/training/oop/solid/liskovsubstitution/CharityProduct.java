@@ -20,9 +20,15 @@ public class CharityProduct extends Product_l {
     The getProductSummary method breaks Liskov Substitution because
     it behaves differently to the base class implementation (Should return product name)
      */
-    @Override
+    //@Override
+    //public String getProductSummary() {
+    //    return "Donate " + charityDonation.getCost() + " to " + charityDonation.name();
+   // }
+    
+    //Solution
+     @Override
     public String getProductSummary() {
-        return "Donate " + charityDonation.getCost() + " to " + charityDonation.name();
+        return getStockType().name() + " costs " + getPrice();
     }
 
     /*
