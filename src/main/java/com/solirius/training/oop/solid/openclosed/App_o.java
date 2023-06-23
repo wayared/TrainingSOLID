@@ -15,8 +15,11 @@ public class App_o {
 
         Refactor BasicVendingMachine_o to comply with open / closed principle */
 
-        BasicVendingMachine_o basicVendingMachine = new BasicVendingMachine_o(Stock.getStock());
+        BasicVendingMachine_o basicVendingMachine = new BasicVendingMachine_o(Stock.getStock(), new BasicPurchaseBehavior());
         Product fanta = basicVendingMachine.purchaseProduct(StockType.FANTA, 1.0);
     }
 
+
+    
+    
 }

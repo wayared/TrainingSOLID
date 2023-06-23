@@ -1,6 +1,5 @@
 package com.solirius.training.oop.solid.interfacesegregation;
 
-import com.solirius.training.oop.exception.CardPaymentsNotSupported;
 import com.solirius.training.oop.exception.CashPaymentsNotSupportedException;
 import com.solirius.training.oop.exception.InsufficientPaymentException;
 import com.solirius.training.oop.exception.OutOfStockException;

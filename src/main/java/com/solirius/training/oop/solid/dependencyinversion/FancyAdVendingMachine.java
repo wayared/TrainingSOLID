@@ -8,12 +8,16 @@ import com.solirius.training.oop.products.StockType;
 import com.solirius.training.oop.solid.dependencyinversion.advertising.FancyAdvertisementDisplay;
 import org.apache.commons.collections4.MultiValuedMap;
 
-public class FancyAdVendingMachine implements BasicVendingMachine_d {
+/**
+ *
+ * @author wayar
+ */
+public abstract class FancyAdVendingMachine implements BasicVendingMachine_d {
 
     /* This class breaks dependency inversion principle because the advertising class is tightly coupled with this class.*/
 
     private MultiValuedMap<StockType, Product> stock;
-    private FancyAdvertisementDisplay advertisementDisplay;
+    private advertisementInterface advertisementDisplay;
 
     public FancyAdVendingMachine(MultiValuedMap<StockType, Product> stock) {
         this.stock = stock;
@@ -27,6 +31,7 @@ public class FancyAdVendingMachine implements BasicVendingMachine_d {
         return stock;
     }
 
+    @Override
     public Product purchaseProduct(StockType stockType, Card card)
         throws OutOfStockException, InsufficientPaymentException {
 
@@ -46,6 +51,8 @@ public class FancyAdVendingMachine implements BasicVendingMachine_d {
 
         return selectedProduct;
     }
+
+    
 
 }
 

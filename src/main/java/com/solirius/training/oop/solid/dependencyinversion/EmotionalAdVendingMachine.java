@@ -13,7 +13,7 @@ public class EmotionalAdVendingMachine implements BasicVendingMachine_d {
     /* This class breaks dependency inversion principle because the advertising class is tightly coupled with this class.*/
 
     private MultiValuedMap<StockType, Product> stock;
-    private EmotionalAdvertismentDisplay advertisementDisplay;
+    private advertisementInterface advertisementDisplay;
 
     public EmotionalAdVendingMachine(MultiValuedMap<StockType, Product> stock) {
         this.stock = stock;
@@ -27,6 +27,7 @@ public class EmotionalAdVendingMachine implements BasicVendingMachine_d {
         return stock;
     }
 
+    @Override
     public Product purchaseProduct(StockType stockType, Card card)
         throws OutOfStockException, InsufficientPaymentException {
 

@@ -20,7 +20,7 @@ public class App_d {
         BasicVendingMachine_d emotionalAdVendingMachine = new EmotionalAdVendingMachine(Stock.getStock());
         Product cola = emotionalAdVendingMachine.purchaseProduct(StockType.COLA, hsbc);
 
-        BasicVendingMachine_d fancyAdVendingMachine = new FancyAdVendingMachine(Stock.getStock());
+        BasicVendingMachine_d fancyAdVendingMachine = new FancyAdVendingMachine(Stock.getStock()) {};
         Product sprite = fancyAdVendingMachine.purchaseProduct(StockType.SPRITE, hsbc);
     }
 }

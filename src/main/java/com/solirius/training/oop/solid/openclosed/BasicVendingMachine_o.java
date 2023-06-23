@@ -13,28 +13,17 @@ public class BasicVendingMachine_o {
 
     private MultiValuedMap<StockType, Product> stock;
     private Double storedCash;
+    private PurchaseBehavior purchaseBehavior;
 
-    public BasicVendingMachine_o(MultiValuedMap<StockType, Product> stock) {
+    public BasicVendingMachine_o(MultiValuedMap<StockType, Product> stock, PurchaseBehavior purchaseBehavior) {
         this.stock = stock;
         this.storedCash = 0.0;
+        this.purchaseBehavior = purchaseBehavior;
     }
 
     public Product purchaseProduct(StockType stockType, Double cash)
-        throws OutOfStockException, InsufficientPaymentException {
-
-        Product selectedProduct = stock.get(stockType)
-            .stream()
-            .findFirst()
-            .orElseThrow(() -> new OutOfStockException());
-
-        if (cash < selectedProduct.getPrice()) {
-            throw new InsufficientPaymentException();
-        }
-
-        stock.get(stockType).remove(selectedProduct);
-        storedCash = +cash;
-
-        return selectedProduct;
+            throws OutOfStockException, InsufficientPaymentException {
+        return purchaseBehavior.purchaseProduct(stock, stockType, cash);
     }
 
     public void stockUp(MultiValuedMap<StockType, Product> stock) {
@@ -50,3 +39,5 @@ public class BasicVendingMachine_o {
     }
 
 }
+
+

@@ -8,7 +8,6 @@ import com.solirius.training.oop.exception.CardPaymentsNotSupported;
 import com.solirius.training.oop.exception.CashPaymentsNotSupportedException;
 import com.solirius.training.oop.exception.InsufficientPaymentException;
 import com.solirius.training.oop.exception.OutOfStockException;
-import com.solirius.training.oop.payment.Card;
 import com.solirius.training.oop.products.Product;
 import com.solirius.training.oop.products.StockType;
 import org.apache.commons.collections4.MultiValuedMap;
